@@ -1,0 +1,61 @@
+<!DOCTYE HTML>
+<html>
+<head>
+<title>jQuery</title>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://jqueryvalidation.org/files/lib/jquery.js"></script>
+<style>
+.red{
+	color:red;
+	margin:10px;
+	font:italic;
+}
+.blank{
+border:1px solid red;
+background-color:pink;
+}
+</style>
+<script>
+$(document).ready(function(){
+	$("button").click(function(){
+	$flag="true";
+	if($("select").val()==""){
+		$flag="false";
+		$("select").addClass("blank") && $(".red").text("please enter");}
+	else{$("select").removeClass("blank") && $(".red").text("");}
+return $flag;
+	});
+
+});
+</script>
+</head>
+<body>
+<div class="row">
+	<div class="col-md-4"><label>*CHAIN SOLD-TO:</label><span class="red"></span>
+		<select class="form-control" required>
+		<option></option>
+		<option>ABINGTON MAVIS</option>
+		</select>
+	</div>
+<div class="col-md-2" id="space"></div>
+	<div class="col-md-4"><label>*CHAIN SHIP-TO:</label><span class="red"></span>
+		<select class="form-control" required>
+		<option></option>
+		<option>RIDGEFIELD PARK MAVIS</option>
+		</select>
+	</div>
+</div><br><br>
+
+<div class="text-right">
+	<button type="button" id="hi" class="btn btn-primary" id="btn">SAVE & CONTINUE  ></button>
+	<button type="button"  class="btn btn-primary" id="btn">CANCEL & RESTART  ></button>
+</div>
+</div>
+
+</body>
+</html>
