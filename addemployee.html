@@ -1,0 +1,52 @@
+
+<div class="container">
+<div class="mt-5 box">
+<h3>Enter New Customer Details</h3><br>
+<div class="row">   
+<form [formGroup]="userForm" (ngSubmit)="add()">
+ 
+    <div class="col-md-6">
+    <label>First Name:</label>
+    <input type="text" formControlName="firstname" placeholder="Enter your First Name" class="form-control required"><br>
+    <!-- <span class="text-danger" *ngIf="firstname.invalid && firstname.touched">
+        First name is required
+    </span> -->
+</div>
+   <div class="col-md-6">
+    <label>Last Name:</label>
+    <input type="text" formControlName="lastname" placeholder="Enter your Last Name" class="form-control" required><br></div>
+ 
+    <div class="col-md-6">
+    <label>Address:</label>
+    <textarea class="form-control" placeholder="Enter your Address" formControlName="address" required></textarea><br></div>
+
+    <div class="col-md-6">
+    <label>City : </label>
+    <select class="form-control" formControlName="city" required>
+        <option value="" disabled selected hidden>Select your City</option>
+        <option>Nellore</option>
+        <option>Bangalore</option>
+        <option>Chennai</option>
+        <option>Hyderabad</option>
+    </select></div><br>
+
+    <div class="col-md-6">
+    <label>State : </label>
+    <select class="form-control" formControlName="state"  required>
+        <option value="" disabled selected hidden>Select your State</option>
+        <option>Andhra Pradesh</option>
+        <option>Karnataka</option>
+        <option>Tamil Nadu</option>
+        <option>Telangana</option>
+    </select></div><br>
+
+    <div class="col-md-6">
+    <label>Order Total:</label>
+    <input type="number" formControlName="total" placeholder="Enter Order Total" class="form-control"  required></div>
+</form>
+</div>
+</div>
+<br>
+<button type="button" class="btn btn-secondary" (click)="add()">Submit</button>
+
+</div>
